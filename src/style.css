@@ -1,36 +1,13 @@
-/* https://coolors.co/2c3e50-e74c3c-ffffff-3498db-95a3b3 */
-
-/* ========================
-Utilidades
-======================== */
-
+/*Verificar o significado*/
 * {
     box-sizing: border-box;
-  }
-  
-  .cf::before,
-  .cf::after {
-    content: '';
-    display: table;
-  }
-  
-  .cf::after {
-    clear: both;
-  }
-  
-  html {
-    position: relative;
-  }
-  
-  img {
-    max-width: 100%;
-  }
-  
-  /* ========================
+}
+
+/* ========================
   Global
   ======================== */
-  
-  body {
+
+body {
     color: #444;
     font-family: Roboto, sans-serif;
     font-size: 18px;
@@ -38,55 +15,75 @@ Utilidades
     line-height: 1;
     margin: 0;
     padding: 0;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  ul,
-  ol,
-  p {
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+p {
     margin-top: 0;
-  }
-  
-  h1 {
+}
+
+h1 {
     font-weight: 900;
-  }
-  
-  p {
+    font-size: 1.5em;
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 1em;
+}
+
+
+p {
     line-height: 1.5;
-  }
-  
-  a,
-  a:hover,
-  a:focus,
-  a:active,
-  a:visited {
+}
+
+a,
+a:active,
+a:visited {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
     color: #e74c3c;
-    text-decoration: underline;
-  }
-  
-  /* ========================
-  Containers
-  ======================== */
-  
-  .container-fluid {
-    padding: 0 1em;
-  }
-  
-  .container {
-    margin: 0 auto;
-    max-width: 996px;
-  }
-  
-  /* ========================
-  Navegação
-  ======================== */
-  
-  @keyframes show-header {
+    text-decoration: none;
+}
+
+/* Elementos principais */
+
+/* Containers */
+
+.container {
+    width: 100%;
+    padding: 5em 8em;
+    text-align: center;
+}
+
+/*Flex grid*/
+
+.grid-container {
+    display: grid;
+    gap: 16px;
+    /* Espaçamento entre os itens */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.grid-item {
+    box-sizing: border-box;
+    padding: 16px;
+    text-align: center;
+}
+
+/*Navegação*/
+@keyframes show-header {
     0% {
       top: -4em;
       opacity: 0;
@@ -95,327 +92,218 @@ Utilidades
       top: 0;
       opacity: 1;
     }
-  }
-  
-  nav {
-    background-color: #fff;
+}
+
+#nav-bar {
+    padding:1em 8em;
+    background-color: #FFF;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
     position: relative;
     top: 0;
-  }
-  
-  nav a,
-  nav a:hover,
-  nav a:focus,
-  nav a:active,
-  nav a:visited {
-    text-decoration: none;
-  }
-  
-  nav .brand {
+}
+
+#nav-bar.fixed {
+    animation: show-header 0.5s ease;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#nav-bar #brand {
     display: inline-block;
-    float: left;
     font-size: 1.25em;
     font-weight: 900;
-  }
-  
-  nav .brand a {
+}
+
+#nav-bar ul {
+    float: right;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-bar ul li {
+    margin-right: 0.5em;
+    display: inline-block;
     color: #444;
-    display: block;
-    padding: 1em 0;
-  }
-  
-  nav .nav-toggle {
+}
+
+#nav-bar .nav-toggle {
     color: #444;
     cursor: pointer;
     display: inline-block;
     float: right;
     font-size: 1.25em;
-    padding: 1em 0;
     z-index: 1000;
-  }
-  
-  nav ul {
-    border-top: 1px solid #ccc;
-    clear: both;
-    list-style: none;
-    margin: 0 -1em;
-    padding: 0;
-    z-index: 999;
-  }
-  
-  nav ul li {
-    border-bottom: 1px solid #ccc;
+}
+
+
+@media (min-width: 1000px) {
+    #nav-bar  .nav-toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 999px) {
+    #nav-bar  .nav-toggle {
+        display: block;
+    }
+    #nav-bar ul {
+        list-style: none;
+        margin: 0;
+        position: absolute;
+        top: 60px;
+        padding:0;
+        width: 100%;
+        left: 0;
+    }
+    
+    #nav-bar ul li {
+        margin-right: 0.5em;
+        display: inline-block;
+        color: #444;
+        width: 100%;
+        padding: 1em 8em;
+        background-color: #FFF;
+        border-bottom: solid 1px #CCC;
+    }
+
+}
+
+
+/* Presentation */
+
+#presentation {
     text-align: center;
-  }
-  
-  nav ul li a {
-    color: #444;
-    display: block;
-    padding: 0.75em;
-  }
-  
-  nav.sticky {
-    animation: show-header 0.5s ease;
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  
-  /* ========================
-  Seções
-  ======================== */
-  
-  .splash {
     background: linear-gradient(rgba(44, 62, 80, 0.65), rgba(52, 152, 219, 0.65)),
-      url('https://t3.ftcdn.net/jpg/00/86/56/12/360_F_86561234_8HJdzg2iBlPap18K38mbyetKfdw1oNrm.jpg')
-        no-repeat fixed center;
+        url('fundo_presentation.jpeg') no-repeat fixed center;
     background-size: cover;
     color: #fff;
-  }
-  
-  .splash .container {
-    padding-top: 25vh; /* No JS fallback*/
-    padding-bottom: 25vh; /* No JS fallback*/
-  }
-  
-  .profile-image {
-    border-radius: 50%;
-    display: block;
-    max-width: 200px;
-    margin: 0 auto 1em;
-    width: 100%;
-  }
-  
-  .splash h1 {
+}
+
+#presentation h1 {
     font-size: 3em;
-    margin-bottom: 0.15em;
     text-align: center;
-  }
-  
-  .splash .lead,
-  .splash .continue {
-    display: block;
-    text-align: center;
-  }
-  
-  .splash .lead {
-    font-size: 1.5em;
-    font-weight: 100;
-    margin-bottom: 1em;
-  }
-  
-  .splash .continue {
-    font-size: 4em;
-  }
-  
-  .splash .continue a {
-    border: 4px solid #fff;
-    border-radius: 100%;
-    color: #fff;
-    display: inline-block;
-    text-decoration: none;
-    width: 80px;
-  }
-  
-  .splash .continue a:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-  }
-  
-  .intro .container,
-  .features .container,
-  .portfolio .container,
-  .contact .container {
-    padding: 5em 0;
-  }
-  
-  .intro,
-  .features,
-  .portfolio,
-  .contact {
-    text-align: center;
-  }
-  
-  .intro {
-    background-color: #e74c3c;
-    color: #fff;
-  }
-  
-  .intro a,
-  .intro a:hover,
-  .intro a:focus,
-  .intro a:active,
-  .intro a:visited {
-    color: #fff;
-  }
-  
-  .features img {
-    display: block;
-    margin: 0 auto 1em;
+}
+
+#presentation img {
     max-width: 200px;
-  }
-  
-  .features .col-3 {
-    margin: 3em auto;
+}
+
+#presentation span {
+    display: inline-block;
     width: 100%;
-  }
-  
-  .portfolio {
+    text-align: center;
+}
+
+/*ABOUT*/
+#about {
+    text-align: center;
+    background-color: #e74c3c;
+    color: #FFF;
+}
+
+#about h1 {
+    text-align: center;
+}
+
+#about p {
+    text-align: center;
+}
+
+
+/*Skills*/
+
+/*Portfólio*/
+
+#portfolio {
     background-color: #3498db;
     color: #fff;
-  }
-  
-  .gallery .gallery-image {
-    margin: 1em auto;
-    width: 100%;
-  }
-  
-  .gallery .gallery-image img {
-    background-color: #23648f;
-    border-radius: 4px;
-    display: block;
-    height: auto;
-    padding: 6px;
-    width: 100%;
-  }
-  
-  .contact form {
-    background-color: #f0f0f0;
-    border-radius: 4px;
-    border-top: 8px solid #e74c3c;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-    padding: 1em;
-  }
-  
-  .contact form input,
-  .contact form textarea {
-    border: none;
-    border-radius: 4px;
-    display: block;
-    margin-bottom: 1em;
-    padding: 1em;
-    width: 100%;
-  }
-  
-  .contact form textarea {
-    height: 6em;
-  }
-  
-  .contact form input[type='“submit”'] {
-    background-color: #e74c3c;
-    border-radius: 0;
+}
+
+#portfolio h2 {
     color: #fff;
-    padding: 1em;
-    text-transform: uppercase;
-  }
-  
-  /* ========================
-  Rodapé
-  ======================== */
-  
-  .footer {
+}
+
+#portfolio img {
+    width: 100%
+}
+
+#portfolio .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+#portfolio .grid-item {
+    border: solid 10px #0b83b6;
+    padding: 0;
+    vertical-align: middle;
+}
+
+#portfolio .grid-item img {
+    padding: 0;
+    margin: 0
+}
+
+/*Form Contact*/
+
+#contact form {
+    border-top: solid 8px #e10a0a;
+    width: 100%;
+    background-color: #ebebeb;
+    padding: 2%;
+}
+
+#contact form .grid-container.two-column {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 5px;
+}
+
+#contact form .grid-container.one-column {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    gap: 5px;
+}
+
+#contact form input[type="text"],#contact form input[type="email"], #contact form textarea {
+    padding: 2em;
+    display: inline-block;
+    height: 50px;
+    border: solid 0.5px #CCC;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#contact form input[type="submit"]{
+    padding: 2em;
+    display: inline-block;
+    border: solid 0.5px #CCC;
+    background-color: #0b83b6;
+    color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+#contact form textarea {
+    height: 200px;
+}
+
+/* footer*/
+
+footer {
     background-color: #2c3e50;
     color: #fff;
     font-size: 1.5em;
     text-align: center;
-  }
+    vertical-align: middle;
+    padding: 1em;
+}
   
-  .footer .container {
+footer .container {
     padding: 1em 0;
-  }
+}
   
-  .footer a {
+footer a {
     color: #fff;
     margin-right: 1em;
-  }
-  
-  .footer a:last-of-type {
-    margin-right: 0;
-  }
-  
-  /* ========================
-  Media Queries
-  ======================== */
-  
-  @media (min-width: 768px) {
-    nav .nav-toggle {
-      display: none;
-    }
-  
-    nav ul {
-      border: none;
-      clear: none;
-      display: inline-block !important;
-      float: right;
-      margin: 0;
-      padding: 25px 0;
-    }
-  
-    nav ul li {
-      border: none;
-      display: inline-block;
-      float: left;
-      margin-right: 1.5em;
-    }
-  
-    nav ul li:last-of-type {
-      margin-right: 0;
-    }
-  
-    nav ul li a {
-      padding: 0;
-    }
-  
-    .splash h1 {
-      font-size: 6em;
-    }
-  
-    .splash .lead {
-      font-size: 3em;
-    }
-  
-    .features .col-3 {
-      float: left;
-      margin: 2em 5% 0 0;
-      padding: 0 1em;
-      width: 30%;
-    }
-  
-    .features .col-3:last-of-type {
-      margin-right: 0;
-    }
-  
-    .gallery .gallery-image {
-      float: left;
-      margin-right: 2.5%;
-      width: 31.6666666667%;
-    }
-  
-    .gallery .gallery-image:nth-of-type(3n) {
-      margin-right: 0;
-    }
-  
-    .contact form {
-      padding: 3em 2em 2em;
-    }
-  
-    .contact form input[type='“submit”'] {
-      padding: 1em 3em;
-      width: auto;
-    }
-  
-    .contact form input.full-half {
-      float: left;
-      margin-right: 2.5%;
-      width: 48.75%;
-    }
-  
-    .contact form input.full-half:nth-of-type(2n) {
-      margin-right: 0;
-    }
-  
-    .contact form textarea {
-      height: 12em;
-    }
-  }
-  
+}

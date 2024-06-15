@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <!--SEGREDO DO RESPONSIVO ESTA AQUI-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style2.css" />
+    <link rel="stylesheet" href="src/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -81,13 +81,61 @@
         </div>
     </section>
 
-    <section>
-        <!--PORTIFÓLIO-->
+    <section id="portfolio" class="container">
+        <h1>Portfólio</h1>
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="https://unsplash.it/800/450?image=250" />
+            </div>
+            <div class="grid-item">
+                <img src="https://unsplash.it/800/450?image=249">
+            </div>
+            <div class="grid-item">
+                <img src="https://unsplash.it/800/450?image=248">
+            </div>
+            <div class="grid-item">
+                <img src="https://unsplash.it/800/450?image=247">
+            </div>
+            <div class="grid-item">
+                <img src="https://unsplash.it/800/450?image=230">
+            </div>
+            <div class="grid-item">
+                <img src="https://unsplash.it/800/450?image=232">
+            </div>
+        </div>
     </section>
 
+    <section id="contact" class="container">
+        <form id="contact-form">
+            <h1>Contato</h1>
+            <div class="grid-container two-column">
+                <div class="grid-item">
+                    <input type="text" placeholder="Nome" id="name" name="name" class="half" />
+                </div>
+                <div class="grid-item">
+                    <input type="email" placeholder="Email" id="email" name="email" class="half" />
+                </div>
+            </div>
+            <div class="grid-container one-column">
+                <div class="grid-item">
+                    <input type="text" placeholder="Assunto" id="subject" name="subject" />
+                </div>
+                <div class="grid-item">
+                    <textarea placeholder="Mensagem" id="message" name="message"></textarea>
+                </div>
+                <div class="grid-item">
+                    <input type="submit" value="Enviar" />
+                </div>
+            </div>
+        </form>
+    </section>
 
     <footer>
-        <!--RODAPÉ-->
+            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fa fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fa fa-dribbble"></i></a>
+            <a href="#" target="_blank"><i class="fa fa-codepen"></i></a>
     </footer>
 
     <script src="src/script.js"></script>
