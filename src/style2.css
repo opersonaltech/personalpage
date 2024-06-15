@@ -31,7 +31,14 @@ p {
 
 h1 {
     font-weight: 900;
+    font-size: 1.5em;
 }
+
+h2 {
+    font-weight: 900;
+    font-size: 1em;
+}
+
 
 p {
     line-height: 1.5;
@@ -52,16 +59,30 @@ a:focus {
 
 /* Elementos principais */
 
-/*Navegação*/
+/* Containers */
 
 .container {
     width: 100%;
-    padding:3em 5em;
+    padding:3em 8em;
 }
 
+/*Flex grid*/
+
+.grid-container {
+    display: grid;
+    gap: 16px; /* Espaçamento entre os itens */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.grid-item {
+    box-sizing: border-box;
+    padding: 16px;
+    text-align: center;
+}
+
+/*Navegação*/
+
 #nav-bar {
-    width: 100%;
-    padding: 2% 1% 2% 1%;
+    padding:1em 8em;
     background-color: #FFF;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
     position: relative;
@@ -91,12 +112,14 @@ a:focus {
 
 #presentation {
     text-align: center;
-    background: linear-gradient(rgba(44, 62, 80, 0.65), rgba(52, 152, 219, 0.65));
-    background-size: cover;
+    background: linear-gradient(rgba(44, 62, 80, 0.65), rgba(52, 152, 219, 0.65)),
+    url('fundo_presentation.jpeg')
+      no-repeat fixed center;    background-size: cover;
     color: #fff;
 }
 
 #presentation h1 {
+    font-size: 3em;
     text-align: center;
 }
 
@@ -122,5 +145,12 @@ a:focus {
 }
 
 #about p {
+    text-align: center;
+}
+
+
+/*Skills*/
+
+#skills{
     text-align: center;
 }
