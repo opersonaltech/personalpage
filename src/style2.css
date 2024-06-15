@@ -1,0 +1,126 @@
+/*Verificar o significado*/
+* {
+    box-sizing: border-box;
+}
+
+/* ========================
+  Global
+  ======================== */
+
+body {
+    color: #444;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    font-weight: 900;
+}
+
+p {
+    line-height: 1.5;
+}
+
+a,
+a:active,
+a:visited {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+/* Elementos principais */
+
+/*Navegação*/
+
+.container {
+    width: 100%;
+    padding:3em 5em;
+}
+
+#nav-bar {
+    width: 100%;
+    padding: 2% 1% 2% 1%;
+    background-color: #FFF;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.45);
+    position: relative;
+    top: 0;
+}
+
+#nav-bar #brand {
+    display: inline-block;
+    font-size: 1.25em;
+    font-weight: 900;
+}
+
+#nav-bar ul {
+    float: right;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-bar ul li {
+    margin-right: 0.5em;
+    display: inline-block;
+    color: #444;
+}
+
+/* Presentation */
+
+#presentation {
+    text-align: center;
+    background: linear-gradient(rgba(44, 62, 80, 0.65), rgba(52, 152, 219, 0.65));
+    background-size: cover;
+    color: #fff;
+}
+
+#presentation h1 {
+    text-align: center;
+}
+
+#presentation img {
+    max-width: 200px;
+}
+
+#presentation span {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+/*ABOUT*/
+#about {
+    text-align: center;
+    background-color: #e74c3c;
+    color: #FFF;
+}
+
+#about h1 {
+    text-align: center;
+}
+
+#about p {
+    text-align: center;
+}
