@@ -218,10 +218,6 @@ a:focus {
     width: 100%
 }
 
-#portfolio .grid-container {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-}
-
 #portfolio .grid-item {
     border: solid 10px #0b83b6;
     padding: 0;
